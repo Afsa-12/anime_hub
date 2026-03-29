@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeVault | Discover Your Next Watch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <h1>AnimeVault</h1>
+        <p>Select a genre to explore the best titles.</p>
+        
+        <div class="genre-container">
+            <button class="genre-btn action" onclick="showAnime('Action')">Action</button>
+            <button class="genre-btn adventure" onclick="showAnime('Adventure')">Adventure</button>
+            <button class="genre-btn scifi" onclick="showAnime('Sci-Fi')">Sci-Fi</button>
+            <button class="genre-btn fantasy" onclick="showAnime('Fantasy')">Fantasy</button>
+        </div>
+    </header>
+
+    <main id="display-section">
+        <h2 id="genre-title">Select a Genre</h2>
+        <ul id="anime-list">
+            </ul>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

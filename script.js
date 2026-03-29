@@ -1,24 +1,25 @@
-const animeData = {
-    'Action': ['Jujutsu Kaisen', 'Attack on Titan', 'Demon Slayer', 'One Punch Man'],
-    'Adventure': ['One Piece', 'Hunter x Hunter', 'Fullmetal Alchemist', 'Vinland Saga'],
-    'Sci-Fi': ['Steins;Gate', 'Cowboy Bebop', 'Psycho-Pass', 'Ghost in the Shell'],
-    'Fantasy': ['Frieren: Beyond Journey\'s End', 'Black Clover', 'Mushoku Tensei', 'Re:Zero']
+const data = {
+    'Action': ['Solo Leveling', 'Naruto', 'Bleach'],
+    'Adventure': ['One Piece', 'Hunter x Hunter', 'Dr. Stone'],
+    'Sci-Fi': ['Neon Genesis Evangelion', 'Cyberpunk Edgerunners'],
+    'Fantasy': ['Overlord', 'That Time I Got Reincarnated as a Slime'],
+    'Romance': ['Horimiya', 'Kaguya-sama: Love is War', 'Your Lie in April']
 };
 
-function showAnime(genre) {
-    const listContainer = document.getElementById('anime-list');
-    const titleContainer = document.getElementById('genre-title');
+// 1. Get the genre from the URL (?genre=Action)
+const urlParams = new URLSearchParams(window.location.search);
+const selectedGenre = urlParams.get('genre');
+
+// 2. Display the data
+if (selectedGenre && data[selectedGenre]) {
+    document.getElementById('genre-heading').innerText = selectedGenre;
     
-    // Clear previous list
-    listContainer.innerHTML = '';
-    
-    // Update title
-    titleContainer.innerText = `Top ${genre} Anime`;
-    
-    // Inject new items
-    animeData[genre].forEach(anime => {
+    const list = document.getElementById('anime-display');
+    data[selectedGenre].forEach(anime => {
         const li = document.createElement('li');
-        li.textContent = anime;
-        listContainer.appendChild(li);
+        li.innerText = anime;
+        list.appendChild(li);
     });
+} else {
+    document.getElementById('genre-heading').innerText = "Genre Not Found";
 }

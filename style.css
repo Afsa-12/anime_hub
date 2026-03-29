@@ -1,0 +1,68 @@
+:root {
+    --bottle-green: #004d40;
+    --deep-forest: #00251a;
+    --accent-color: #ff00ff; /* Bold opposite of green */
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Hero Section with Gradients */
+.hero {
+    background: linear-gradient(135deg, var(--bottle-green), var(--deep-forest));
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 10px; }
+
+/* Vibrant Yet Soothing Genre Buttons */
+.genre-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.genre-btn {
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, opacity 0.8s;
+    color: white;
+}
+
+.genre-btn:hover { transform: scale(1.1); }
+
+/* Custom Button Colors */
+.action { background-color: #ff5f6d; }
+.adventure { background-color: #ffc371; }
+.scifi { background-color: #2193b0; }
+.fantasy { background-color: #9d50bb; }
+
+/* Anime List Styling */
+#display-section {
+    padding: 40px;
+    text-align: center;
+}
+
+#anime-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: 800; /* Bold */
+    color: var(--accent-color); /* Opposite of bottle green */
+}
+
+#anime-list li {
+    margin: 15px 0;
+    text-transform: uppercase;
+}
